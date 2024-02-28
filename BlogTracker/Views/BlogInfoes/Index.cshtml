@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BlogTracker.Models.BlogInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">List Of Blogs</h1>
+@* 
+<p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+
+<div class="row">
+@foreach (var item in Model)
+{
+   
+  <div class="col-sm-6">
+    <div class="card w-100 h-100">
+      <div class="card-body">
+                    <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Title)</h5>
+                    <p class="card-text">Date of Creation : @Html.DisplayFor(modelItem => item.DateOfCreation)</p>
+                    <p class="card-text">Subjects : @Html.DisplayFor(modelItem => item.Subject)</p>
+                    <a href="@Html.DisplayFor(modelItem => item.BlogUrl)" class="btn btn-primary w-75 h-auto mb-1">@Html.DisplayFor(modelItem => item.BlogUrl)</a>
+      </div>
+    </div>
+  </div>
+}
+</div>
+
